@@ -1,0 +1,47 @@
+{% extends "layouts/main_layout.html" %}
+
+{% block page_body %}
+
+{% set tech_item_name_css = "font-semibold rounded bg-primary-300 dark:bg-primary-500 dark:text-gray-800 px-2 border border-primary-700" %}
+
+<div class="flex flex-col">
+    <h1 class="text-4xl">{{ app_services.app_state.app_title }}</h1>
+    <p class="italic">Welcome to your new desktop application.</p>
+    <p class="pt-3" >This application is based on starter repo and the following tech-stack:</p>
+    <section class="mt-5 py-3 px-5 rounded bg-gray-200 dark:bg-gray-600">
+        <p class="text-lg font-medium" >Backend:</p>
+        <ul class="mt-2 list-disc px-5 flex flex-col space-y-2">
+            <li>
+                <span class="{{tech_item_name_css}}">Python Flask</span>
+                <span class="ml-3">- For server-side rendering app pages via HTML</span>
+            </li>
+            <li>
+                <span class="{{tech_item_name_css}}">Python Jinja</span>
+                <span class="ml-3">- HTML templating engine allow for python in the HTML</span>
+            </li>
+            <li>
+                <span class="{{tech_item_name_css}}">Python pywebview</span>
+                <span class="ml-3">- Encapsulate a WebApp in a desktop shell</span>
+            </li>
+            <li>
+                <span class="{{tech_item_name_css}}">Python pyinstaller</span>
+                <span class="ml-3">- Bundle the application as a standalone executable</span>
+            </li>
+        </ul>
+    </section>
+    <section class="mt-5 py-3 px-5  rounded bg-gray-200 dark:bg-gray-600">
+        <p class="text-lg font-medium" >Frontend:</p>
+        <ul class="mt-2 list-disc px-5 flex flex-col space-y-2">
+            <li>
+                <span class="{{tech_item_name_css}}">htmx.js</span>
+                <span class="ml-3">- High power tools for html</span>
+            </li>
+            <li>
+                <span class="{{tech_item_name_css}}">Flowbite</span>
+                <span class="ml-3">- Tailwindcss-based, copy-and-paste component library</span>
+            </li>            
+        </ul>
+    </section>
+</div>
+
+{% endblock %}

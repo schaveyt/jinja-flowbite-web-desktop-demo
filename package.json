@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.4.4"
+  },
+  "scripts": {
+    "webdev": "flask --app my_app --debug run",
+    "desktop": "python desktop.py",
+    "watchcss": "npx tailwindcss -i ./my_app/static/css/app.css -o ./my_app/static/css/app.min.css --watch",
+    "buildcss": "npx tailwindcss -i ./my_app/static/css/app.css -o ./my_app/static/css/app.min.css",
+    "dist": "rm -r -f ./build && rm -r -f ./dist && bash runCiBuild.sh publish local"
+  },
+  "dependencies": {
+    "flowbite": "^2.4.1"
+  }
+}

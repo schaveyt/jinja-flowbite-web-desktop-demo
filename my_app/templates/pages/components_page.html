@@ -1,0 +1,254 @@
+
+{% extends "layouts/main_layout.html" %}
+{% import "jinja_flowbite/controls/button.jinja" as flowbite_button %}
+{% import "jinja_flowbite/controls/card.jinja" as flowbite_card %}
+
+{% import "jinja_flowbite/controls/spinner.jinja" as flowbite_spinner %}
+{% import "jinja_flowbite/controls/alert.jinja" as flowbite_alert %}
+{% import "jinja_flowbite/controls/checkbox.jinja" as flowbite_checkbox %}
+{% import "jinja_flowbite/controls/input_label.jinja" as flowbite_input_label %}
+{% import "jinja_flowbite/controls/input_text.jinja" as flowbite_input_text %}
+{% import "jinja_flowbite/controls/select.jinja" as flowbite_select %}
+
+{% import "jinja_flowbite/icons/angle_down.jinja" as flowbite_angle_down %}
+{% import "jinja_flowbite/icons/arrow_down.jinja" as flowbite_arrow_down %}
+{% import "jinja_flowbite/icons/arrow_up.jinja" as flowbite_arrow_up %}
+{% import "jinja_flowbite/icons/chart.jinja" as flowbite_chart %}
+{% import "jinja_flowbite/icons/circle_close.jinja" as flowbite_circle_close %}
+{% import "jinja_flowbite/icons/circle_plus.jinja" as flowbite_circle_plus %}
+{% import "jinja_flowbite/icons/clipboard.jinja" as flowbite_clipboard %}
+{% import "jinja_flowbite/icons/clock_outline.jinja" as flowbite_clock_outline %}
+{% import "jinja_flowbite/icons/document_solid.jinja" as flowbite_document_solid %}
+{% import "jinja_flowbite/icons/download.jinja" as flowbite_download %}
+{% import "jinja_flowbite/icons/file_solid.jinja" as flowbite_file_solid %}
+{% import "jinja_flowbite/icons/flowbite_logo.jinja" as flowbite_flowbite_logo %}
+{% import "jinja_flowbite/icons/folder_solid.jinja" as flowbite_folder_solid %}
+{% import "jinja_flowbite/icons/gear.jinja" as flowbite_gear %}
+{% import "jinja_flowbite/icons/info_circle.jinja" as flowbite_info_circle %}
+{% import "jinja_flowbite/icons/network_bus.jinja" as flowbite_network_bus %}
+{% import "jinja_flowbite/icons/network_graph.jinja" as flowbite_network_graph %}
+{% import "jinja_flowbite/icons/pie_chart.jinja" as flowbite_pie_chart %}
+{% import "jinja_flowbite/icons/plus.jinja" as flowbite_plus %}
+{% import "jinja_flowbite/icons/power.jinja" as flowbite_power %}
+{% import "jinja_flowbite/icons/question_circle.jinja" as flowbite_question_circle %}
+{% import "jinja_flowbite/icons/refresh.jinja" as flowbite_refresh %}
+{% import "jinja_flowbite/icons/remove.jinja" as flowbite_remove %}
+{% import "jinja_flowbite/icons/scc_branch.jinja" as flowbite_scc_branch %}
+{% import "jinja_flowbite/icons/stack.jinja" as flowbite_stack %}
+{% import "jinja_flowbite/icons/undo.jinja" as flowbite_undo %}
+{% import "jinja_flowbite/icons/upload.jinja" as flowbite_upload %}
+{% import "jinja_flowbite/icons/wand_magic_solid.jinja" as flowbite_wand_magic_solid %}
+
+
+
+{% block page_body %}
+
+<div class="flex justify-between">
+    <h1 class="pb-4 text-3xl">
+        {{ page_title }}
+    </h1>
+    <div>
+        {{ flowbite_button.render( id="back-btn", text="Back", style="primary", additional_attribs='onclick="history.back()"' ) }}
+    </div>
+</div>
+
+<div class="px-4 flex flex-col space-y-6">
+
+    <div class="flex flex-wrap">
+
+        {% call(section_name) flowbite_card.render(title="Colors", enable_header_bg="true", class="mr-6 mt-6") %}
+
+            {% if section_name == "body" %}
+                
+                <div class="flex space-x-4">
+
+                    <div class="flex flex-col space-y-1 justify-stretch">
+                        <div class="p-3 bg-gray-50 text-gray-800">bg-gray-50</div>
+                        <div class="p-3 bg-gray-100 text-gray-800">bg-gray-100</div>
+                        <div class="p-3 bg-gray-200 text-gray-800">bg-gray-200</div>
+                        <div class="p-3 bg-gray-300 text-gray-800">bg-gray-300</div>
+                        <div class="p-3 bg-gray-400">bg-gray-400</div>
+                        <div class="p-3 bg-gray-500">bg-gray-500</div>
+                        <div class="p-3 bg-gray-600">bg-gray-600</div>
+                        <div class="p-3 bg-gray-700">bg-gray-700</div>
+                        <div class="p-3 bg-gray-800 text-gray-100">bg-gray-800</div>
+                        <div class="p-3 bg-gray-900 text-gray-100">bg-gray-900</div>
+                    </div>
+
+                    <div class="flex flex-col space-y-1 justify-stretch">
+                        <div class="p-3 bg-primary-50 text-gray-800">bg-primary-50</div>
+                        <div class="p-3 bg-primary-100 text-gray-800">bg-primary-100</div>
+                        <div class="p-3 bg-primary-200 text-gray-800">bg-primary-200</div>
+                        <div class="p-3 bg-primary-300 text-gray-800">bg-primary-300</div>
+                        <div class="p-3 bg-primary-400">bg-primary-400</div>
+                        <div class="p-3 bg-primary-500">bg-primary-500</div>
+                        <div class="p-3 bg-primary-600">bg-primary-600</div>
+                        <div class="p-3 bg-primary-700">bg-primary-700</div>
+                        <div class="p-3 bg-primary-800 text-primary-100">bg-primary-800</div>
+                        <div class="p-3 bg-primary-900 text-primary-100">bg-primary-900</div>
+                    </div>
+
+                    <div class="flex flex-col space-y-1 justify-stretch">
+                        <div class="p-3 bg-red-50 text-gray-800">bg-red-50</div>
+                        <div class="p-3 bg-red-100 text-gray-800">bg-red-100</div>
+                        <div class="p-3 bg-red-200 text-gray-800">bg-red-200</div>
+                        <div class="p-3 bg-red-300 text-gray-800">bg-red-300</div>
+                        <div class="p-3 bg-red-400">bg-red-400</div>
+                        <div class="p-3 bg-red-500">bg-red-500</div>
+                        <div class="p-3 bg-red-600">bg-red-600</div>
+                        <div class="p-3 bg-red-700">bg-red-700</div>
+                        <div class="p-3 bg-red-800 text-red-100">bg-red-800</div>
+                        <div class="p-3 bg-red-900 text-red-100">bg-red-900</div>
+                    </div>
+
+                </div>
+
+            {% endif %}
+
+        {% endcall %}
+    
+        
+        {% call(section_name) flowbite_card.render(title="Buttons", enable_header_bg="true", class="mr-6 mt-6") %}
+
+            {% if section_name == "body" %}
+
+                <div class="flex flex-col space-y-4">
+                    <div>
+                        {{ flowbite_button.render( style="default", text="Default" ) }}
+                    </div>
+                    <div>
+                        {{ flowbite_button.render( style="primary", text="Primary" ) }}
+                    </div>
+                    <div>
+                        {{ flowbite_button.render( style="primary", text="Primary (disabled)", disabled="true" ) }}
+                    </div>
+                    <div>
+                        {% call flowbite_button.render(style="primary") %}
+                            <div class="flex items-center space-x-3">
+                                {{ flowbite_plus.render() }}
+                                <p>Primary with Icon</p>
+                            </div>
+                        {% endcall %}
+                    </div>
+                    <div>
+                        {% call flowbite_button.render( style="primary", tooltip="A tooltip") %}
+                            <div class="flex items-center space-x-3">
+                                {{ flowbite_plus.render() }}
+                                <p>Primary with Icon & Tooltip</p>
+                            </div>
+                        {% endcall %}
+                    </div>
+                    <div>
+                        {{ flowbite_button.render( style="spinner" ) }}
+                    </div>
+                    
+                </div>
+
+            {% endif %}
+
+        {% endcall %}
+
+        
+
+        {% call(section_name) flowbite_card.render(title="Alerts", enable_header_bg="true", class="mr-6 mt-6") %}
+
+            {% if section_name == "body" %}
+
+                <div class="flex flex-col space-y-4">
+                    {{ flowbite_alert.render(type="success", text="This is a success alert") }}
+                    {{ flowbite_alert.render(type="warning", text="This is a warning alert") }}
+                    {{ flowbite_alert.render(type="danger", text="This is a failure alert") }}
+                </div>
+
+            {% endif %}
+
+        {% endcall %}
+
+        
+
+        {% call(section_name) flowbite_card.render(title="Spinners", enable_header_bg="true", class="mr-6 mt-6") %}
+
+            {% if section_name == "body" %}
+
+                <div class="flex flex-col space-y-4">
+                    {{ flowbite_spinner.render (text="") }}
+                    {{ flowbite_spinner.render (text="With text.") }}
+                </div>
+
+            {% endif %}
+
+        {% endcall %}
+
+        
+
+        {% call(section_name) flowbite_card.render(title="Form Inputs", enable_header_bg="true", class="mr-6 mt-6") %}
+
+            {% if section_name == "body" %}
+
+            <form post="#" class="h-[88%] flex flex-col justify-between">
+                <div class="flex flex-col space-y-4">
+                    <div class="flex items-center space-x-3">
+                        {{ flowbite_checkbox.render() }} 
+                        {{ flowbite_input_label.render(text="Checkbox (unchecked)") }}
+                    </div>
+                    
+                    <div class="flex items-center space-x-3">
+                        {{ flowbite_checkbox.render(checked=True) }} 
+                        {{ flowbite_input_label.render(text="Checkbox (checked)") }}
+                    </div>
+                    
+                    <div>
+                        {{ flowbite_input_label.render(text="Input Text", class="mb-2") }}
+                        {{ flowbite_input_text.render(value="Example value") }}
+                    </div>
+                    <div>
+                        {{ flowbite_input_label.render(text="Input Text with placeholder",  class="mb-2") }}
+                        {{ flowbite_input_text.render(placeholder="Placeholder text") }}
+                    </div>
+                    <div>
+                        {{ flowbite_input_label.render(text="Input Text with required",  class="mb-2") }}
+                        {{ flowbite_input_text.render(required=True) }}
+                    </div>
+                    
+                    <div>
+                        {{ flowbite_input_label.render(text="Select", class="mb-2") }}
+                        {% call flowbite_select.render(id="123", name="select_value") %}
+                            <option >Choose an option</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option selected value="3">Option 3</option>
+                            <option value="4">Option 4</option>
+                        {% endcall %} 
+                    </div>
+                    
+                </div>
+                <div class="flex items-center justify-end">
+                    {{ flowbite_button.render( style="primary", type="submit", text="Submit")  }}
+                </div>
+            </form>
+
+            {% endif %}
+
+        {% endcall %}
+
+        {% call(section_name) flowbite_card.render(title="Tables", enable_header_bg="true", class="mr-6 mt-6") %}
+
+            {% if section_name == "body" %}
+
+                <div class="flex flex-col space-y-4">
+                    <p>TBD</p>
+                </div>
+
+
+            {% endif %}
+
+        {% endcall %}
+
+        
+
+    </div>
+
+</div>
+    
+{% endblock %}
+

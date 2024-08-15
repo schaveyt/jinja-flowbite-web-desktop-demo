@@ -1,0 +1,21 @@
+
+{% extends "layouts/main_layout.html" %}
+
+{% import 'jinja_flowbite/controls/button.jinja' as flowbite_button %}
+
+{% block page_body %}
+
+<h1 class="pb-4 text-3xl">Counter - Interactive UI Example</h1>
+
+<div class="flex items-center space-x-2">
+    <p class="py-4">Current count:</p>
+    <span id="counter_value">{{ app_services.app_state.counter }}</span>
+</div>
+  
+{{ flowbite_button.render(text="click me", style="primary", additional_attribs="hx-post='/counter_incr' hx-target='#counter_value' ") }}
+
+
+<p class="pt-4">This page demonstrated asynchronously updating the application state without a page reload. Moreover, the counter value is maintained across pages</p>    
+
+{% endblock %}
+

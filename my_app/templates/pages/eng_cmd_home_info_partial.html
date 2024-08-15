@@ -1,0 +1,12 @@
+<div class="mt-6 flex items-center space-x-2">
+    <p class="text-xl font-medium">Eng Cmd Web Service Status:</p>
+
+    {% set target_color_classes = "bg-green-600 dark:bg-green-400" %}
+
+    {% if not eng_cmd_svc_status_is_active %}
+        {% set target_color_classes = "bg-red-600" %}
+    {% endif %}
+
+    <span class="inline-flex justify-center items-center w-5 h-5 text-xs font-semibold rounded-full {{ target_color_classes }}"></span>
+</div>
+

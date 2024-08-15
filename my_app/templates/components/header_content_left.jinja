@@ -1,0 +1,9 @@
+
+{% import 'jinja_flowbite/icons/flowbite_logo.jinja' as flowbite_flowbite_icon %}
+
+
+<!-- Application Title -->
+<a class="flex items-center ml-2 sm:ml-0" data-enhance-nav="false">
+    {{ flowbite_flowbite_icon.render(width_css_class="w-8", width_css_class="h-8", class="text-primary-500 mr-3" ) }}
+    <a href="/" class="self-center text-2xl font-semibold whitespace-nowrap text-white">{{ app_services.app_state.app_title }}</a>
+</a>

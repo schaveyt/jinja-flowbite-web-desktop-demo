@@ -1,0 +1,49 @@
+{% import "jinja_flowbite/icons/flowbite_logo.jinja" as flowbite_flowbite_logo %}
+
+{% import "jinja_flowbite/controls/button.jinja" as flowbite_button %}
+
+{% if layout == "main" %}
+    {% extends "layouts/main_layout.html" %}
+{% elif layout == "stacked" %}
+    {% extends "layouts/stacked_layout.html" %}
+{% endif %}
+
+{% block page_body %}
+
+<div class="flex flex-col items-center justify-center px-6 pt-8 mx-auto pt:mt-0 dark:bg-gray-900">
+    <div class="flex items-center justify-center mb-8 text-2xl font-semibold lg:mb-10 dark:text-white">
+        {{ flowbite_flowbite_logo.render(width_css_class="w-11", height_css_class="h-11", class="text-primary-500 mr-4" ) }}
+        <span>{{ app_services.app_state.app_title }}</span>
+        <span class="ml-3 text-base font-normal italic">
+            {% if layout == "main" %}
+                (main layout)
+            {% elif layout == "stacked" %}
+                (stacked layout)
+            {% endif %}
+        </span>
+    </div>
+    <!-- Card -->
+    <div class="w-full max-w-xl p-6 space-y-8 sm:p-8 bg-white rounded-lg shadow dark:bg-gray-800">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+            Sign in to platform 
+        </h2>
+        <form class="mt-8 space-y-6" action="#">
+            <div>
+                <label for="username" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                <input type="text" name="username" id="username" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="name@company.com" required="">
+            <div data-lastpass-icon-root="" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div></div>
+            <div>
+                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
+                <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required="">
+            <div data-lastpass-icon-root="" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div></div>
+            
+            <div class="flex items-center justify-end">
+                {{ flowbite_button.render(text="Login", type="submit", style="primary") }}
+            </div>
+            
+        </form>
+    </div>
+</div>
+    
+{% endblock %}
+

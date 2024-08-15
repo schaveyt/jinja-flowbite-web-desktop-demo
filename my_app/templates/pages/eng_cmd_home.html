@@ -1,0 +1,13 @@
+{% import "jinja_flowbite/controls/button.jinja" as flowbite_button %}
+{% extends "layouts/main_layout.html" %}
+
+{% block page_body %}
+
+<p class="text-3xl">Eng Cmd Home</p>
+
+<div class="mt-3" id="pol_tc_sb_content" hx-get="/get_eng_cmd_info_async" hx-swap="outerHTML" hx-indicator='#indicator' hx-trigger="load"></div>
+{{ flowbite_button.render(style="spinner", id="indicator", class="htmx-indicator", text="Fetch eng_cmd service info...") }}
+
+    
+{% endblock %}
+

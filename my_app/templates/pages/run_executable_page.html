@@ -1,0 +1,31 @@
+{% import 'jinja_flowbite/controls/button.jinja' as flowbite_button %}
+
+{% extends "layouts/main_layout.html" %}
+
+{% block page_body %}
+
+<p class="pb-6 text-3xl">Run Executable Example</p>
+
+{#
+
+1. When the user clicks the button
+   a. show a spinner while the action/executable is running
+2. When the executable is done running
+   a. hide the spinner and show the output of the executable in a preformatted roundtangle.
+
+#}
+
+<div id="action" class="flex items-center space-x-4">
+    {{ flowbite_button.render(text="Run Exe",
+                     style="primary", 
+                     additional_attribs="hx-get='/run_executable__run_exe' hx-target='#executable_output' hx-indicator='#indicator' hx-disabled-elt='this' hx-on::before-request='app_clear_inner_html(\"executable_output\")' ")}}
+
+    {{ flowbite_button.render(style="spinner", id="indicator", class="htmx-indicator") }}
+</div>
+
+<p class="pt-6 text-xl font-medium">Executable Output:</p>
+<div id="executable_output" class="mt-3 p-2 flex border border-gray-400  bg-gray-200 dark:bg-gray-500 dark:text-gray-100 min-h-16 whitespace-pre-wrap">
+</div>
+
+{% endblock %}
+

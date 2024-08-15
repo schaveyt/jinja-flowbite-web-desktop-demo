@@ -1,0 +1,209 @@
+
+{% extends "layouts/main_layout.html" %}
+
+{% import "jinja_flowbite/controls/button.jinja" as flowbite_button %}
+{% import "jinja_flowbite/controls/card.jinja" as flowbite_card %}
+
+{% import "jinja_flowbite/icons/angle_down.jinja" as flowbite_angle_down %}
+{% import "jinja_flowbite/icons/arrow_down.jinja" as flowbite_arrow_down %}
+{% import "jinja_flowbite/icons/arrow_up.jinja" as flowbite_arrow_up %}
+{% import "jinja_flowbite/icons/chart.jinja" as flowbite_chart %}
+{% import "jinja_flowbite/icons/circle_close.jinja" as flowbite_circle_close %}
+{% import "jinja_flowbite/icons/circle_plus.jinja" as flowbite_circle_plus %}
+{% import "jinja_flowbite/icons/clipboard.jinja" as flowbite_clipboard %}
+{% import "jinja_flowbite/icons/clock_outline.jinja" as flowbite_clock_outline %}
+{% import "jinja_flowbite/icons/document_solid.jinja" as flowbite_document_solid %}
+{% import "jinja_flowbite/icons/download.jinja" as flowbite_download %}
+{% import "jinja_flowbite/icons/file_solid.jinja" as flowbite_file_solid %}
+{% import "jinja_flowbite/icons/flowbite_logo.jinja" as flowbite_flowbite_logo %}
+{% import "jinja_flowbite/icons/folder_solid.jinja" as flowbite_folder_solid %}
+{% import "jinja_flowbite/icons/gear.jinja" as flowbite_gear %}
+{% import "jinja_flowbite/icons/info_circle.jinja" as flowbite_info_circle %}
+{% import "jinja_flowbite/icons/network_bus.jinja" as flowbite_network_bus %}
+{% import "jinja_flowbite/icons/network_graph.jinja" as flowbite_network_graph %}
+{% import "jinja_flowbite/icons/pie_chart.jinja" as flowbite_pie_chart %}
+{% import "jinja_flowbite/icons/plus.jinja" as flowbite_plus %}
+{% import "jinja_flowbite/icons/power.jinja" as flowbite_power %}
+{% import "jinja_flowbite/icons/question_circle.jinja" as flowbite_question_circle %}
+{% import "jinja_flowbite/icons/refresh.jinja" as flowbite_refresh %}
+{% import "jinja_flowbite/icons/remove.jinja" as flowbite_remove %}
+{% import "jinja_flowbite/icons/scc_branch.jinja" as flowbite_scc_branch %}
+{% import "jinja_flowbite/icons/stack.jinja" as flowbite_stack %}
+{% import "jinja_flowbite/icons/undo.jinja" as flowbite_undo %}
+{% import "jinja_flowbite/icons/upload.jinja" as flowbite_upload %}
+{% import "jinja_flowbite/icons/wand_magic_solid.jinja" as flowbite_wand_magic_solid %}
+
+
+
+{% block page_body %}
+
+<div class="flex justify-between">
+    <h1 class="pb-4 text-3xl">
+        {{ page_title }}
+    </h1>
+    <div>
+        {{ flowbite_button.render( id="back-btn", text="Back", style="primary", additional_attribs='onclick="history.back()"' ) }}
+    </div>
+</div>
+
+<div class="px-4 flex flex-col space-y-6">
+
+
+
+    {% call(section_name) flowbite_card.render(title="Icons", enable_header_bg="true", class="mr-6 mt-6") %}
+
+        {% if section_name == "body" %}
+
+            <div class="flex flex-wrap">
+
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_angle_down.render( class="" ) }}
+                    <span class="text-sm">angle_down</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_arrow_down.render( class="" ) }}
+                    <span class="text-sm">arrow_down</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_arrow_up.render( class="" ) }}
+                    <span class="text-sm">arrow_up</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_chart.render( class="" ) }}
+                    <span class="text-sm">chart</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_circle_close.render( class="" ) }}
+                    <span class="text-sm">circle_close</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_circle_plus.render( class="" ) }}
+                    <span class="text-sm">circle_plus</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_clipboard.render( class="" ) }}
+                    <span class="text-sm">clipboard</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_clock_outline.render( class="" ) }}
+                    <span class="text-sm">clock_outline</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_document_solid.render( class="" ) }}
+                    <span class="text-sm">document_solid</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_download.render( class="" ) }}
+                    <span class="text-sm">download</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_file_solid.render( class="" ) }}
+                    <span class="text-sm">file_solid</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_flowbite_logo.render( class="" ) }}
+                    <span class="text-sm">flowbite_logo</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_folder_solid.render( class="" ) }}
+                    <span class="text-sm">folder_solid</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_gear.render( class="" ) }}
+                    <span class="text-sm">gear</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_info_circle.render( class="" ) }}
+                    <span class="text-sm">info_circle</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_network_bus.render( class="" ) }}
+                    <span class="text-sm">network_bus</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_network_graph.render( class="" ) }}
+                    <span class="text-sm">network_graph</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_pie_chart.render( class="" ) }}
+                    <span class="text-sm">pie_chart</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_plus.render( class="" ) }}
+                    <span class="text-sm">plus</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_power.render( class="" ) }}
+                    <span class="text-sm">power</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_question_circle.render( class="" ) }}
+                    <span class="text-sm">question_circle</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_refresh.render( class="" ) }}
+                    <span class="text-sm">refresh</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_remove.render( class="" ) }}
+                    <span class="text-sm">remove</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_scc_branch.render( class="" ) }}
+                    <span class="text-sm">scc_branch</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_stack.render( class="" ) }}
+                    <span class="text-sm">stack</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_undo.render( class="" ) }}
+                    <span class="text-sm">undo</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_upload.render( class="" ) }}
+                    <span class="text-sm">upload</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_wand_magic_solid.render( class="" ) }}
+                    <span class="text-sm">wand_magic_solid</span>
+                </div>                    
+
+            </div>
+
+        {% endif %}
+
+    {% endcall %}
+
+</div>
+    
+{% endblock %}
+

@@ -1,0 +1,55 @@
+{% import 'jinja_flowbite/controls/table.jinja' as flowbite_table with context %}
+{% extends "layouts/main_layout.html" %}
+
+{% block page_body %}
+
+<p class="pb-6 text-3xl">Fetch Data From Disk Example</p>
+
+{% if model is none or model | length == 0 %}
+
+    <span>No pokemon found</span>
+
+{% else %}
+
+    <p class="pb-4">{{ model|length }} pokemon</p>
+
+    {{ flowbite_table.renderTableBegin() }}
+
+    <thead class="{{flowbite_table.thead_css()}}">
+        <tr>
+            <th class="{{flowbite_table.th_css()}}" >Id</th>
+            <th class="{{flowbite_table.th_css()}}" >Name</th>
+            <th class="{{flowbite_table.th_css()}}" >Species</th>
+            <th class="{{flowbite_table.th_css()}}" >Description</th>
+        </tr>
+    </thead>
+
+    <tbody class="{{flowbite_table.tbody_css()}}">
+
+        {% for pokemon in model %}
+
+            <tr class="{{flowbite_table.tr_css()}}">
+                <td class="{{flowbite_table.td_css()}}">
+                    {{pokemon.id}}
+                </td>
+                <td class="{{flowbite_table.td_css()}}">
+                    {{pokemon.name}}
+                </td>
+                <td class="{{flowbite_table.td_css()}}">
+                    {{pokemon.species}}
+                </td>
+                <td class="{{flowbite_table.td_css()}}">
+                    {{pokemon.description}}
+                </td>
+            </tr>
+
+        {% endfor %}
+
+    </tbody>
+
+    {{ flowbite_table.renderTableEnd() }}
+    
+{% endif %}
+
+{% endblock %}
+

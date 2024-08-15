@@ -1,0 +1,39 @@
+{% extends "jinja_flowbite/layouts/main_layout.jinja" %}
+
+{% block flowbite_head_app_css_links_outlet %}
+    <link href="{{url_for('static',filename='css/app.min.css')}}" rel="stylesheet" />
+{% endblock %}
+
+{% block flowbite_head_scripts_outlet %}
+    <script src="{{url_for('static',filename='js/htmx.2.0.1.min.js')}}"></script>
+{% endblock %}
+
+
+{% block flowbite_body_scripts_outlet %}
+    <script src="{{url_for('static',filename='js/flowbite.min.2.4.1.js')}}"></script>
+    <script src="{{url_for('static',filename='js/jinja-flowbite-app.js')}}"></script>
+{% endblock %}
+
+{% block flowbite_header_content_left_outlet  %}
+    {% include "components/header_content_left.jinja" %}
+{% endblock %}
+
+{% block flowbite_header_content_right_outlet  %}
+    {% include "components/header_content_right.jinja" %}
+{% endblock %}
+
+{% block flowbite_page_sidebar_outlet %}
+    {% include "components/sidebar_content.jinja" %}
+{% endblock %}
+
+
+{% block flowbite_footer_content_outlet %}
+    {% include "components/footer_content.jinja" %}
+{% endblock %}
+
+
+{% block flowbite_page_body_outlet %}
+
+    {% block page_body %}{% endblock %}
+
+{% endblock %}
