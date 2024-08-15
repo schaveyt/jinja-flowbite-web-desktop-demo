@@ -4,7 +4,8 @@
     <img src="my_app/static/img/example-page.png" width="75%"/>
 </p>
 
-Start delivering small, slick, cross-platform desktop application with this starter repo.
+Start delivering small, slick, cross-platform desktop application with this starter repo utilizing
+python's Flask and the [jinja-flowbite](https://pypi.org/project/jinja-flowbite/) Jinja package.
 
 ## Table of Contents <!-- omit in toc -->
 
