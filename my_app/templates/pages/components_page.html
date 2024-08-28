@@ -56,11 +56,15 @@
 
     <div class="flex flex-wrap">
 
+        
+
+
+
         {% call(section_name) flowbite_card.render(title="Colors", enable_header_bg="true", class="mr-6 mt-6") %}
 
             {% if section_name == "body" %}
                 
-                <div class="flex space-x-4">
+                <div class="flex space-x-4 min-w-80">
 
                     <div class="flex flex-col space-y-1 justify-stretch">
                         <div class="p-3 bg-gray-50 text-gray-800">bg-gray-50</div>
@@ -112,7 +116,7 @@
 
             {% if section_name == "body" %}
 
-                <div class="flex flex-col space-y-4">
+                <div class="flex flex-col space-y-4 min-w-80">
                     <div>
                         {{ flowbite_button.render( style="default", text="Default" ) }}
                     </div>
@@ -154,7 +158,7 @@
 
             {% if section_name == "body" %}
 
-                <div class="flex flex-col space-y-4">
+                <div class="flex flex-col space-y-4 min-w-80">
                     {{ flowbite_alert.render(type="success", text="This is a success alert") }}
                     {{ flowbite_alert.render(type="warning", text="This is a warning alert") }}
                     {{ flowbite_alert.render(type="danger", text="This is a failure alert") }}
@@ -170,7 +174,7 @@
 
             {% if section_name == "body" %}
 
-                <div class="flex flex-col space-y-4">
+                <div class="flex flex-col space-y-4 min-w-80">
                     {{ flowbite_spinner.render (text="") }}
                     {{ flowbite_spinner.render (text="With text.") }}
                 </div>
@@ -185,7 +189,7 @@
 
             {% if section_name == "body" %}
 
-            <form post="#" class="h-[88%] flex flex-col justify-between">
+            <form post="#" class="h-[88%] flex flex-col justify-between min-w-80">
                 <div class="flex flex-col space-y-4">
                     <div class="flex items-center space-x-3">
                         {{ flowbite_checkbox.render() }} 
@@ -235,10 +239,47 @@
 
             {% if section_name == "body" %}
 
-                <div class="flex flex-col space-y-4">
+                <div class="flex flex-col space-y-4 min-w-80">
                     <p>TBD</p>
                 </div>
 
+
+            {% endif %}
+
+        {% endcall %}
+
+
+        {% call(section_name) flowbite_card.render(title="Cards", enable_header_bg="true", class="mr-6 mt-6") %}
+
+            {% if section_name == "body" %}
+
+                <div class="flex flex-col space-y-10 w-80">
+
+                    {# Example card (simple) #}
+                    {% call(section) flowbite_card.render(title="Simple Card") %}
+            
+                        {% if section == "body" %}
+                            <p>This is the card body</p>
+                        {% endif %}
+            
+                    {% endcall %}
+            
+                    {# Example card (Enhanced) #}
+                    {% call(section) flowbite_card.render(title="Enhanced Card",
+                                                    subtitle="Subtitle Text",
+                                                    show_header_subtitle=True,
+                                                    enable_header_bg=True) %}
+            
+                        {% if section == "header_controls" %}
+                            {{ flowbite_plus.render()  }}
+                        {% endif %}
+                
+                        {% if section == "body" %}
+                            <p>This is the card body</p>
+                        {% endif %}
+            
+                    {% endcall %}
+                </div>
 
             {% endif %}
 
