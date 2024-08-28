@@ -7,6 +7,8 @@
 Start delivering small, slick, cross-platform desktop application with this starter repo utilizing
 python's Flask and the [jinja-flowbite](https://pypi.org/project/jinja-flowbite/) Jinja package.
 
+> Use the [Discussion section](/../../discussions) for questions, suggestions and issues.
+
 ## Table of Contents <!-- omit in toc -->
 
 - [1. Overview](#1-overview)
@@ -15,7 +17,6 @@ python's Flask and the [jinja-flowbite](https://pypi.org/project/jinja-flowbite/
     - [2.2. VSCode Extensions](#22-vscode-extensions)
     - [2.3. Install the Python Library Dependencies](#23-install-the-python-library-dependencies)
     - [2.4. Install Nodejs Dependencies](#24-install-nodejs-dependencies)
-    - [2.5. Install git-hooks](#25-install-git-hooks)
 - [3. Development](#3-development)
     - [3.1. Desktop Development](#31-desktop-development)
 - [4. Distribution (Local)](#4-distribution-local)
@@ -27,8 +28,6 @@ control and distributed as a single, standalone executable
 
 The tech stack is intentionally simple and approachable such that any intermediate software engineer
 should be able to pickup, experiment, and go quickly.
-
-Use the [Discussion section](/discussions) for questions, suggestions and issues.
 
 __Tech Stack:__
 
@@ -68,6 +67,8 @@ source ./venv/bin/activate # linux
 pip install -r requirements.txt
 ~~~
 
+> Use the [Discussion section](/../../discussions) for questions, suggestions and issues.
+
 ### 2.4. Install Nodejs Dependencies
 
 This is Flowbite and Tailwind CSS minification.
@@ -76,11 +77,7 @@ This is Flowbite and Tailwind CSS minification.
 npm install
 ~~~
 
-### 2.5. Install git-hooks
-
-~~~sh
-.\tools\git-hooks\install_git_hooks.ps1
-~~~
+> Use the [Discussion section](/../../discussions) for questions, suggestions and issues.
 
 ## 3. Development
 
@@ -108,6 +105,8 @@ With the above vscode extensions installed, one may set breakpoints and run via 
 npm run desktop
 ~~~
 
+> Use the [Discussion section](/../../discussions) for questions, suggestions and issues.
+> 
 ## 4. Distribution (Local)
 
 > WARNING. Distributable executables should be created by a CICD pipeline.
@@ -122,3 +121,5 @@ npm run desktop
 
     - The `/dist` directory contains the build .exe
     - The `desktop.spec` file may be tailored to your application's needs.
+
+> Use the [Discussion section](/../../discussions) for questions, suggestions and issues.
