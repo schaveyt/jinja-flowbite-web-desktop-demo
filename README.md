@@ -109,19 +109,15 @@ npm run desktop
 
 ## 4. Distribution (Local)
 
-> WARNING. Distributable exe should only be created by TeamCity
+> WARNING. Distributable executables should be created by a CICD pipeline.
 
-1. Update the version found in `runCiBuild.sh`
+1. If needed, update the version found in `build.ps1` or `build.sh` file
 1. From a terminal run the following command to build the single file, standalone exe:
 
     ~~~sh
-    .\venv\Scripts\activate
-    npm run dist
+    .\venv\Scripts\activate # only run if the venv is not active
+    npm run dist            # for windows, use `distnix` for linux and osx
     ~~~
 
     - The `/dist` directory contains the build .exe
     - The `desktop.spec` file may be tailored to your application's needs.
-
-## 5. HOW-TO: Add a new page
-
-TBD

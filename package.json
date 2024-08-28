@@ -7,7 +7,8 @@
     "desktop": "python desktop.py",
     "watchcss": "npx tailwindcss -i ./my_app/static/css/app.css -o ./my_app/static/css/app.min.css --watch",
     "buildcss": "npx tailwindcss -i ./my_app/static/css/app.css -o ./my_app/static/css/app.min.css",
-    "dist": "rm -r -f ./build && rm -r -f ./dist && bash runCiBuild.sh publish local"
+    "dist": "rm -r -f ./build && rm -r -f ./dist && powershell ./build.ps1 publish local",
+    "distnix": "rm -r -f ./build && rm -r -f ./dist && ./build.sh publish local"
   },
   "dependencies": {
     "flowbite": "^2.4.1"

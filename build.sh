@@ -1,15 +1,8 @@
 #!/usr/bin/env bash
 
-# Bash script used as the entry point for the TeamCity CI server
-# Usage: ./runCiBuild.sh <BUILD_TYPE> (TARGET)
-# Example: ./runCiBuild.sh build a0
-
-
-# set -x
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 APP_MAJOR_VERSION="0"
-APP_MINOR_VERSION="1"
+APP_MINOR_VERSION="4"
 APP_PATCH_VERSION="0"
 APP_BASE_VERSION="${APP_MAJOR_VERSION}.${APP_MINOR_VERSION}.${APP_PATCH_VERSION}"
 
