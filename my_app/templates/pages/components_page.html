@@ -5,44 +5,28 @@
 
 {% import "jinja_flowbite/controls/spinner.jinja" as flowbite_spinner %}
 {% import "jinja_flowbite/controls/alert.jinja" as flowbite_alert %}
+{% import "jinja_flowbite/controls/anchor.jinja" as flowbite_anchor %}
+{% import "jinja_flowbite/controls/badge.jinja" as flowbite_badge %}
 {% import "jinja_flowbite/controls/checkbox.jinja" as flowbite_checkbox %}
 {% import "jinja_flowbite/controls/input_label.jinja" as flowbite_input_label %}
 {% import "jinja_flowbite/controls/input_text.jinja" as flowbite_input_text %}
 {% import "jinja_flowbite/controls/select.jinja" as flowbite_select %}
-
-{% import "jinja_flowbite/icons/angle_down.jinja" as flowbite_angle_down %}
-{% import "jinja_flowbite/icons/arrow_down.jinja" as flowbite_arrow_down %}
-{% import "jinja_flowbite/icons/arrow_up.jinja" as flowbite_arrow_up %}
-{% import "jinja_flowbite/icons/chart.jinja" as flowbite_chart %}
-{% import "jinja_flowbite/icons/circle_close.jinja" as flowbite_circle_close %}
-{% import "jinja_flowbite/icons/circle_plus.jinja" as flowbite_circle_plus %}
-{% import "jinja_flowbite/icons/clipboard.jinja" as flowbite_clipboard %}
-{% import "jinja_flowbite/icons/clock_outline.jinja" as flowbite_clock_outline %}
-{% import "jinja_flowbite/icons/document_solid.jinja" as flowbite_document_solid %}
-{% import "jinja_flowbite/icons/download.jinja" as flowbite_download %}
-{% import "jinja_flowbite/icons/file_solid.jinja" as flowbite_file_solid %}
-{% import "jinja_flowbite/icons/flowbite_logo.jinja" as flowbite_flowbite_logo %}
-{% import "jinja_flowbite/icons/folder_solid.jinja" as flowbite_folder_solid %}
-{% import "jinja_flowbite/icons/gear.jinja" as flowbite_gear %}
-{% import "jinja_flowbite/icons/info_circle.jinja" as flowbite_info_circle %}
-{% import "jinja_flowbite/icons/network_bus.jinja" as flowbite_network_bus %}
-{% import "jinja_flowbite/icons/network_graph.jinja" as flowbite_network_graph %}
-{% import "jinja_flowbite/icons/pie_chart.jinja" as flowbite_pie_chart %}
-{% import "jinja_flowbite/icons/plus.jinja" as flowbite_plus %}
-{% import "jinja_flowbite/icons/power.jinja" as flowbite_power %}
-{% import "jinja_flowbite/icons/question_circle.jinja" as flowbite_question_circle %}
-{% import "jinja_flowbite/icons/refresh.jinja" as flowbite_refresh %}
-{% import "jinja_flowbite/icons/remove.jinja" as flowbite_remove %}
-{% import "jinja_flowbite/icons/scc_branch.jinja" as flowbite_scc_branch %}
-{% import "jinja_flowbite/icons/stack.jinja" as flowbite_stack %}
-{% import "jinja_flowbite/icons/undo.jinja" as flowbite_undo %}
-{% import "jinja_flowbite/icons/upload.jinja" as flowbite_upload %}
-{% import "jinja_flowbite/icons/wand_magic_solid.jinja" as flowbite_wand_magic_solid %}
+{% import 'jinja_flowbite/controls/tab_control_anchor.jinja' as flowbite_tab_control_anchor %}
+{% import 'jinja_flowbite/controls/tab_anchor.jinja' as flowbite_tab_anchor %}
 
 {% import 'jinja_flowbite/controls/table_static.jinja' as flowbite_table_static %}
 {% import 'jinja_flowbite/controls/table_static_header_cell.jinja' as flowbite_table_static_header_cell %}
 {% import 'jinja_flowbite/controls/table_static_row.jinja' as flowbite_table_static_row %}
 {% import 'jinja_flowbite/controls/table_static_row_cell.jinja' as flowbite_table_static_row_cell %}
+
+{% import 'jinja_flowbite/controls/tab_control_header.jinja' as flowbite_tab_control_header %}
+{% import 'jinja_flowbite/controls/tab_control_body.jinja' as flowbite_tab_control_body %}
+{% import 'jinja_flowbite/controls/tab.jinja' as flowbite_tab %}
+{% import 'jinja_flowbite/controls/tab_content.jinja' as flowbite_tab_content %}
+
+{% import "jinja_flowbite/icons/plus.jinja" as flowbite_plus %}
+
+
 
 
 
@@ -115,6 +99,52 @@
             {% endif %}
 
         {% endcall %}
+
+        {% call(section_name) flowbite_card.render(title="Alerts", enable_header_bg="true", class="mr-6 mt-6") %}
+
+            {% if section_name == "body" %}
+
+                <div class="flex flex-col space-y-4 min-w-80">
+                    {{ flowbite_alert.render(type="success", text="This is a success alert") }}
+                    {{ flowbite_alert.render(type="warning", text="This is a warning alert") }}
+                    {{ flowbite_alert.render(type="danger", text="This is a failure alert") }}
+                </div>
+
+            {% endif %}
+
+        {% endcall %}
+
+        {% call(section_name) flowbite_card.render(title="Anchor", enable_header_bg="true", class="mr-6 mt-6") %}
+
+            {% if section_name == "body" %}
+
+                <div class="flex flex-col space-y-4 min-w-80">
+                    {{ flowbite_anchor.render(id="anchor-1", text="Example Anchor", href="https://flowbite.com/", new_tab=true) }}
+                </div>
+
+            {% endif %}
+
+        {% endcall %}
+
+        {% call(section_name) flowbite_card.render(title="Badges", enable_header_bg="true", class="mr-6 mt-6") %}
+
+            {% if section_name == "body" %}
+
+                <div class="flex flex-col space-y-4 min-w-80 items-center">
+                    {{ flowbite_badge.render(id="badge-1", text="success", type="success", class="w-32") }}
+                    {{ flowbite_badge.render(id="badge-2", text="warning", type="warning", class="w-32") }}
+                    {{ flowbite_badge.render(id="badge-3", text="danger", type="danger", class="w-32") }}
+                    {{ flowbite_badge.render(id="badge-4", text="dark", type="dark", class="w-32") }}
+                    <hr class="border w-full"/>
+                    {{ flowbite_badge.render(id="badge-1", text="success", type="success", class="w-32", text_size="text-base") }}
+                    {{ flowbite_badge.render(id="badge-2", text="warning", type="warning", class="w-32", text_size="text-base") }}
+                    {{ flowbite_badge.render(id="badge-3", text="danger", type="danger", class="w-32", text_size="text-base") }}
+                    {{ flowbite_badge.render(id="badge-4", text="dark", type="dark", class="w-32", text_size="text-base") }}
+                </div>
+
+            {% endif %}
+
+        {% endcall %}
     
         
         {% call(section_name) flowbite_card.render(title="Buttons", enable_header_bg="true", class="mr-6 mt-6") %}
@@ -158,36 +188,41 @@
         {% endcall %}
 
         
-
-        {% call(section_name) flowbite_card.render(title="Alerts", enable_header_bg="true", class="mr-6 mt-6") %}
+        {% call(section_name) flowbite_card.render(title="Cards", enable_header_bg="true", class="mr-6 mt-6") %}
 
             {% if section_name == "body" %}
 
-                <div class="flex flex-col space-y-4 min-w-80">
-                    {{ flowbite_alert.render(type="success", text="This is a success alert") }}
-                    {{ flowbite_alert.render(type="warning", text="This is a warning alert") }}
-                    {{ flowbite_alert.render(type="danger", text="This is a failure alert") }}
+                <div class="flex flex-col space-y-10 w-80">
+
+                    {# Example card (simple) #}
+                    {% call(section) flowbite_card.render(title="Simple Card") %}
+            
+                        {% if section == "body" %}
+                            <p>This is the card body</p>
+                        {% endif %}
+            
+                    {% endcall %}
+            
+                    {# Example card (Enhanced) #}
+                    {% call(section) flowbite_card.render(title="Enhanced Card",
+                                                    subtitle="Subtitle Text",
+                                                    show_header_subtitle=True,
+                                                    enable_header_bg=True) %}
+            
+                        {% if section == "header_controls" %}
+                            {{ flowbite_plus.render()  }}
+                        {% endif %}
+                
+                        {% if section == "body" %}
+                            <p>This is the card body</p>
+                        {% endif %}
+            
+                    {% endcall %}
                 </div>
 
             {% endif %}
 
         {% endcall %}
-
-        
-
-        {% call(section_name) flowbite_card.render(title="Spinners", enable_header_bg="true", class="mr-6 mt-6") %}
-
-            {% if section_name == "body" %}
-
-                <div class="flex flex-col space-y-4 min-w-80">
-                    {{ flowbite_spinner.render (text="") }}
-                    {{ flowbite_spinner.render (text="With text.") }}
-                </div>
-
-            {% endif %}
-
-        {% endcall %}
-
         
 
         {% call(section_name) flowbite_card.render(title="Form Inputs", enable_header_bg="true", class="mr-6 mt-6") %}
@@ -240,6 +275,103 @@
 
         {% endcall %}
 
+
+
+        {% call(section_name) flowbite_card.render(title="Spinners", enable_header_bg="true", class="mr-6 mt-6") %}
+
+            {% if section_name == "body" %}
+
+                <div class="flex flex-col space-y-4 min-w-80">
+                    {{ flowbite_spinner.render (text="") }}
+                    {{ flowbite_spinner.render (text="With text.") }}
+                </div>
+
+            {% endif %}
+
+        {% endcall %}
+
+        
+        {% call(section_name) flowbite_card.render(title="Tabs (URL Query String)", enable_header_bg="true", class="mr-6 mt-6") %}
+
+            {% if section_name == "body" %}
+
+                {% set active_tab = request.args.get('active_tab') %}
+                {% if active_tab is none %}
+                    {% set active_tab = "profile" %}
+                {% endif %}
+
+                <div class="flex flex-col space-y-4 w-96">
+                    {% call flowbite_tab_control_anchor.render() %}
+                        {{ flowbite_tab_anchor.render (title="Profile", active=true if active_tab == "profile" else False, url="{}?active_tab=profile".format(request.base_url)) }}
+                        {{ flowbite_tab_anchor.render (title="Dashboard", active=true if active_tab == "dashboard" else False, url="{}?active_tab=dashboard".format(request.base_url)) }}
+                        {{ flowbite_tab_anchor.render (title="Settings", active=true if active_tab == "settings" else False, url="{}?active_tab=settings".format(request.base_url)) }}
+                    {% endcall %}
+
+                    <div class="h-64 w-full mb-6 p-4 border dark:border-gray-600">
+        
+                        {% if active_tab == "profile" %}
+                        
+                            <div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
+                                <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Profile tab's associated content</strong>. 
+                            </div>
+                
+                        {% elif active_tab == "dashboard" %}
+                        
+                            <div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
+                                <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Dashboard tab's associated content</strong>. 
+                            </div>
+                
+                        {% elif active_tab == "settings" %}
+                        
+                            <div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
+                                <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Settings tab's associated content</strong>. 
+                            </div>
+
+                        {% endif %}
+                    </div>
+                </div>
+
+            {% endif %}
+
+        {% endcall %}
+
+
+        {% call(section_name) flowbite_card.render(title="Tabs (Client Side)", enable_header_bg="true", class="mr-6 mt-6") %}
+
+            {% if section_name == "body" %}
+
+
+                <div class="flex flex-col space-y-3 w-96">
+
+                    {% call flowbite_tab_control_header.render(id="my_tab_ctrl", tab_control_body_id="my_tab_ctrl_body") %}
+                        {{ flowbite_tab.render(id="profile", title="Profile", active=True) }}
+                        {{ flowbite_tab.render(id="dashboard", title="Dashboard", active=False) }}
+                        {{ flowbite_tab.render(id="settings", title="Settings", active=False) }}
+                        {{ flowbite_tab.render(id="contacts", title="Contacts", active=False) }}
+                    {% endcall %}
+                    {% call flowbite_tab_control_body.render(id="my_tab_ctrl_body") %}
+                        {% call flowbite_tab_content.render(id="profile") %}
+                            <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Profile tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                        {% endcall %}
+                        {% call flowbite_tab_content.render(id="dashboard") %}
+                            <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Dashboard tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                        {% endcall %}
+                        {% call flowbite_tab_content.render(id="settings") %}
+                            <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Settings tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                        {% endcall %}
+                        {% call flowbite_tab_content.render(id="contacts") %}
+                            <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Contacts tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                        {% endcall %}
+                    {% endcall %}
+
+                    
+                </div>
+
+            {% endif %}
+
+        {% endcall %}
+        
+
         {% call(section_name) flowbite_card.render(title="Tables", enable_header_bg="true", class="mr-6 mt-6") %}
 
             {% if section_name == "body" %}
@@ -275,41 +407,7 @@
         {% endcall %}
 
 
-        {% call(section_name) flowbite_card.render(title="Cards", enable_header_bg="true", class="mr-6 mt-6") %}
-
-            {% if section_name == "body" %}
-
-                <div class="flex flex-col space-y-10 w-80">
-
-                    {# Example card (simple) #}
-                    {% call(section) flowbite_card.render(title="Simple Card") %}
-            
-                        {% if section == "body" %}
-                            <p>This is the card body</p>
-                        {% endif %}
-            
-                    {% endcall %}
-            
-                    {# Example card (Enhanced) #}
-                    {% call(section) flowbite_card.render(title="Enhanced Card",
-                                                    subtitle="Subtitle Text",
-                                                    show_header_subtitle=True,
-                                                    enable_header_bg=True) %}
-            
-                        {% if section == "header_controls" %}
-                            {{ flowbite_plus.render()  }}
-                        {% endif %}
-                
-                        {% if section == "body" %}
-                            <p>This is the card body</p>
-                        {% endif %}
-            
-                    {% endcall %}
-                </div>
-
-            {% endif %}
-
-        {% endcall %}
+        
 
         
 
