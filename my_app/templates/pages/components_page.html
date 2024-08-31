@@ -24,6 +24,8 @@
 {% import 'jinja_flowbite/controls/tab.jinja' as flowbite_tab %}
 {% import 'jinja_flowbite/controls/tab_content.jinja' as flowbite_tab_content %}
 
+{% import 'jinja_flowbite/controls/toast.jinja' as flowbite_toast %}
+
 {% import "jinja_flowbite/icons/plus.jinja" as flowbite_plus %}
 
 
@@ -406,8 +408,57 @@
 
         {% endcall %}
 
+        {% call(section_name) flowbite_card.render(title="Tables", enable_header_bg="true", class="mr-6 mt-6") %}
 
-        
+            {% if section_name == "body" %}
+
+                <div class="flex flex-col space-y-4 min-w-80">
+
+                    {% call(table_section) flowbite_table_static.render() %}
+                        {% if table_section == "header_cells" %}
+                            {{ flowbite_table_static_header_cell.render(text="Id") }}
+                            {{ flowbite_table_static_header_cell.render(text="Name") }}
+                            {{ flowbite_table_static_header_cell.render(text="Species") }}
+                            {{ flowbite_table_static_header_cell.render(text="Description") }}
+                        {% endif %}
+                        {% if table_section == "body_rows" %}
+                            {% for sub_row in table_data %}
+                                {% call flowbite_table_static_row.render() %}
+                                    {{ flowbite_table_static_row_cell.render(text=sub_row[0]) }}
+                                    {{ flowbite_table_static_row_cell.render(text=sub_row[1]) }}
+                                    {{ flowbite_table_static_row_cell.render(text=sub_row[2]) }}
+                                    {{ flowbite_table_static_row_cell.render(text=sub_row[3]) }}
+                                {% endcall %}
+                            {% endfor %}
+                        {% endif %}
+                    {% endcall %}
+
+
+                    
+                </div>
+
+
+            {% endif %}
+
+        {% endcall %}
+
+
+        {% call(section_name) flowbite_card.render(title="Toast", enable_header_bg="true", class="mr-6 mt-6") %}
+
+            {% if section_name == "body" %}
+
+                <div class="flex flex-col items-center space-y-4 min-w-80">
+
+                    {{ flowbite_toast.render(text="This is a success toast", type="success") }}
+                    {{ flowbite_toast.render(text="This is a warning toast", type="warning") }}
+                    {{ flowbite_toast.render(text="This is a danger toast", type="danger") }}
+                    
+                </div>
+
+
+            {% endif %}
+
+        {% endcall %}
 
         
 
