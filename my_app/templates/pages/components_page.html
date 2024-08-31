@@ -39,6 +39,11 @@
 {% import "jinja_flowbite/icons/upload.jinja" as flowbite_upload %}
 {% import "jinja_flowbite/icons/wand_magic_solid.jinja" as flowbite_wand_magic_solid %}
 
+{% import 'jinja_flowbite/controls/table_static.jinja' as flowbite_table_static %}
+{% import 'jinja_flowbite/controls/table_static_header_cell.jinja' as flowbite_table_static_header_cell %}
+{% import 'jinja_flowbite/controls/table_static_row.jinja' as flowbite_table_static_row %}
+{% import 'jinja_flowbite/controls/table_static_row_cell.jinja' as flowbite_table_static_row_cell %}
+
 
 
 {% block page_body %}
@@ -240,7 +245,28 @@
             {% if section_name == "body" %}
 
                 <div class="flex flex-col space-y-4 min-w-80">
-                    <p>TBD</p>
+
+                    {% call(table_section) flowbite_table_static.render() %}
+                        {% if table_section == "header_cells" %}
+                            {{ flowbite_table_static_header_cell.render(text="Id") }}
+                            {{ flowbite_table_static_header_cell.render(text="Name") }}
+                            {{ flowbite_table_static_header_cell.render(text="Species") }}
+                            {{ flowbite_table_static_header_cell.render(text="Description") }}
+                        {% endif %}
+                        {% if table_section == "body_rows" %}
+                            {% for sub_row in table_data %}
+                                {% call flowbite_table_static_row.render() %}
+                                    {{ flowbite_table_static_row_cell.render(text=sub_row[0]) }}
+                                    {{ flowbite_table_static_row_cell.render(text=sub_row[1]) }}
+                                    {{ flowbite_table_static_row_cell.render(text=sub_row[2]) }}
+                                    {{ flowbite_table_static_row_cell.render(text=sub_row[3]) }}
+                                {% endcall %}
+                            {% endfor %}
+                        {% endif %}
+                    {% endcall %}
+
+
+                    
                 </div>
 
 

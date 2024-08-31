@@ -1353,12 +1353,12 @@ input[type="range"]::-ms-fill-lower {
   width: 100%;
 }
 
-.min-w-full {
-  min-width: 100%;
-}
-
 .min-w-80 {
   min-width: 20rem;
+}
+
+.min-w-full {
+  min-width: 100%;
 }
 
 .max-w-min {

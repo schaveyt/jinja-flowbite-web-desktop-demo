@@ -14,3 +14,8 @@ def counter_example_page():
 def counter_incr_partial():
 	app_services.app_state.counter += 1
 	return f"{app_services.app_state.counter}"
+
+@app.route("/counter_reset", methods=["POST"])
+def counter_reset_partial():
+	app_services.app_state.counter = 0
+	return f"{app_services.app_state.counter}"

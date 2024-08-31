@@ -11,9 +11,11 @@
     <p class="py-4">Current count:</p>
     <span id="counter_value">{{ app_services.app_state.counter }}</span>
 </div>
-  
-{{ flowbite_button.render(text="click me", style="primary", additional_attribs="hx-post='/counter_incr' hx-target='#counter_value' ") }}
 
+<div class="flex items-center space-x-2">
+    {{ flowbite_button.render(text="Increment", style="primary", additional_attribs="hx-post='/counter_incr' hx-target='#counter_value' ") }}
+    {{ flowbite_button.render(text="Reset", style="default", additional_attribs="hx-post='/counter_reset' hx-target='#counter_value' ") }}
+</div>
 
 <p class="pt-4">This page demonstrated asynchronously updating the application state without a page reload. Moreover, the counter value is maintained across pages</p>    
 
