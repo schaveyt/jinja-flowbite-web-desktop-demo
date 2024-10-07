@@ -2,4 +2,4 @@
 Flask==3.0.3
 pywebview==4.3.3
 pyinstaller==6.0.0
-jinja-flowbite>=0.3.dev6
+jinja-flowbite>=0.3.dev7
