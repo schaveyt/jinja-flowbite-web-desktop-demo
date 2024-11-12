@@ -4,9 +4,17 @@
 {% import "jinja_flowbite/controls/button.jinja" as flowbite_button %}
 {% import "jinja_flowbite/controls/card.jinja" as flowbite_card %}
 
+
+{% import "jinja_flowbite/icons/adjustments_horizontal.jinja" as flowbite_adjustments_horizontal %}
+{% import "jinja_flowbite/icons/adjustments_vertical.jinja" as flowbite_adjustments_vertical %}
 {% import "jinja_flowbite/icons/angle_down.jinja" as flowbite_angle_down %}
+{% import "jinja_flowbite/icons/annotation.jinja" as flowbite_annotation %}
+{% import "jinja_flowbite/icons/archive.jinja" as flowbite_archive %}
 {% import "jinja_flowbite/icons/arrow_down.jinja" as flowbite_arrow_down %}
+{% import "jinja_flowbite/icons/arrow_up_right.jinja" as flowbite_arrow_up_right %}
 {% import "jinja_flowbite/icons/arrow_up.jinja" as flowbite_arrow_up %}
+{% import "jinja_flowbite/icons/award.jinja" as flowbite_award %}
+{% import "jinja_flowbite/icons/badge_check.jinja" as flowbite_badge_check %}
 {% import "jinja_flowbite/icons/chart.jinja" as flowbite_chart %}
 {% import "jinja_flowbite/icons/circle_close.jinja" as flowbite_circle_close %}
 {% import "jinja_flowbite/icons/circle_plus.jinja" as flowbite_circle_plus %}
@@ -22,6 +30,8 @@
 {% import "jinja_flowbite/icons/network_bus.jinja" as flowbite_network_bus %}
 {% import "jinja_flowbite/icons/network_graph.jinja" as flowbite_network_graph %}
 {% import "jinja_flowbite/icons/pie_chart.jinja" as flowbite_pie_chart %}
+{% import "jinja_flowbite/icons/play_solid.jinja" as flowbite_play_solid %}
+{% import "jinja_flowbite/icons/play.jinja" as flowbite_play %}
 {% import "jinja_flowbite/icons/plus.jinja" as flowbite_plus %}
 {% import "jinja_flowbite/icons/power.jinja" as flowbite_power %}
 {% import "jinja_flowbite/icons/question_circle.jinja" as flowbite_question_circle %}
@@ -56,10 +66,29 @@
 
             <div class="flex flex-wrap">
 
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_adjustments_horizontal.render( class="" ) }}
+                    <span class="text-sm">adjustments_horizontal</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_adjustments_vertical.render( class="" ) }}
+                    <span class="text-sm">adjustments_vertical</span>
+                </div>
 
                 <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
                     {{ flowbite_angle_down.render( class="" ) }}
                     <span class="text-sm">angle_down</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_annotation.render( class="" ) }}
+                    <span class="text-sm">annotation</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_archive.render( class="" ) }}
+                    <span class="text-sm">archive</span>
                 </div>
 
                 <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
@@ -70,6 +99,16 @@
                 <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
                     {{ flowbite_arrow_up.render( class="" ) }}
                     <span class="text-sm">arrow_up</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_award.render( class="" ) }}
+                    <span class="text-sm">award</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_badge_check.render( class="" ) }}
+                    <span class="text-sm">badge_check</span>
                 </div>
 
                 <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
@@ -145,6 +184,15 @@
                 <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
                     {{ flowbite_pie_chart.render( class="" ) }}
                     <span class="text-sm">pie_chart</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_play_solid.render( class="" ) }}
+                    <span class="text-sm">play_solid</span>
+                </div>
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_play.render( class="" ) }}
+                    <span class="text-sm">play</span>
                 </div>
 
                 <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
