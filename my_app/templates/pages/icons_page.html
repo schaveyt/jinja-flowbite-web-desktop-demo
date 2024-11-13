@@ -8,9 +8,14 @@
 {% import "jinja_flowbite/icons/adjustments_horizontal.jinja" as flowbite_adjustments_horizontal %}
 {% import "jinja_flowbite/icons/adjustments_vertical.jinja" as flowbite_adjustments_vertical %}
 {% import "jinja_flowbite/icons/angle_down.jinja" as flowbite_angle_down %}
+{% import "jinja_flowbite/icons/angle_left.jinja" as flowbite_angle_left %}
+{% import "jinja_flowbite/icons/angle_right.jinja" as flowbite_angle_right %}
+{% import "jinja_flowbite/icons/angle_up.jinja" as flowbite_angle_up %}
 {% import "jinja_flowbite/icons/annotation.jinja" as flowbite_annotation %}
 {% import "jinja_flowbite/icons/archive.jinja" as flowbite_archive %}
 {% import "jinja_flowbite/icons/arrow_down.jinja" as flowbite_arrow_down %}
+{% import "jinja_flowbite/icons/arrow_left.jinja" as flowbite_arrow_left %}
+{% import "jinja_flowbite/icons/arrow_right.jinja" as flowbite_arrow_right %}
 {% import "jinja_flowbite/icons/arrow_up_right.jinja" as flowbite_arrow_up_right %}
 {% import "jinja_flowbite/icons/arrow_up.jinja" as flowbite_arrow_up %}
 {% import "jinja_flowbite/icons/award.jinja" as flowbite_award %}
@@ -22,6 +27,7 @@
 {% import "jinja_flowbite/icons/clock_outline.jinja" as flowbite_clock_outline %}
 {% import "jinja_flowbite/icons/document_solid.jinja" as flowbite_document_solid %}
 {% import "jinja_flowbite/icons/download.jinja" as flowbite_download %}
+{% import "jinja_flowbite/icons/expand.jinja" as flowbite_expand %}
 {% import "jinja_flowbite/icons/file_solid.jinja" as flowbite_file_solid %}
 {% import "jinja_flowbite/icons/flowbite_logo.jinja" as flowbite_flowbite_logo %}
 {% import "jinja_flowbite/icons/folder_solid.jinja" as flowbite_folder_solid %}
@@ -82,6 +88,21 @@
                 </div>
 
                 <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_angle_left.render( class="" ) }}
+                    <span class="text-sm">angle_left</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_angle_right.render( class="" ) }}
+                    <span class="text-sm">angle_right</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_angle_up.render( class="" ) }}
+                    <span class="text-sm">angle_up</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
                     {{ flowbite_annotation.render( class="" ) }}
                     <span class="text-sm">annotation</span>
                 </div>
@@ -94,6 +115,16 @@
                 <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
                     {{ flowbite_arrow_down.render( class="" ) }}
                     <span class="text-sm">arrow_down</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_arrow_left.render( class="" ) }}
+                    <span class="text-sm">arrow_left</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_arrow_right.render( class="" ) }}
+                    <span class="text-sm">arrow_right</span>
                 </div>
 
                 <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
@@ -144,6 +175,11 @@
                 <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
                     {{ flowbite_download.render( class="" ) }}
                     <span class="text-sm">download</span>
+                </div>
+
+                <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
+                    {{ flowbite_expand.render( class="" ) }}
+                    <span class="text-sm">expand</span>
                 </div>
 
                 <div class="mr-3 mt-3 flex flex-col items-center space-y-2 p-4 justify-center rounded hover:dark:bg-gray-700">
