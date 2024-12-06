@@ -15,20 +15,35 @@
 {% endblock %}
 
 {% block flowbite_header_content_left_outlet  %}
-    {% include "components/header_content_left.jinja" %}
+    {% with app_services=app_services %}
+        {% include "components/header_content_left.jinja" %}
+    {% endwith %}
+{% endblock %}
+
+{% block flowbite_header_content_center_outlet %}
+    {% with app_services=app_services %}
+        {% include "components/header_content_center.jinja" %}
+    {% endwith %}
 {% endblock %}
 
 {% block flowbite_header_content_right_outlet  %}
-    {% include "components/header_content_right.jinja" %}
+    {% with app_services=app_services %}
+        {% include "components/header_content_right.jinja" %}
+    {% endwith %}
 {% endblock %}
 
+
 {% block flowbite_page_sidebar_outlet %}
-    {% include "components/sidebar_content.jinja" %}
+    {% with app_services=app_services %}
+        {% include "components/sidebar_content.jinja" %}
+    {% endwith %}
 {% endblock %}
 
 
 {% block flowbite_footer_content_outlet %}
-    {% include "components/footer_content.jinja" %}
+    {% with app_services=app_services %}
+        {% include "components/footer_content.jinja" %}
+    {% endwith %}
 {% endblock %}
 
 
