@@ -25,9 +25,11 @@ if __name__ == '__main__':
         height=1200,
         text_select=True,
         resizable=True,
-        easy_drag=True
+        easy_drag=True,
+        zoomable=True
     )
 
-    webview.start()
+    webview.settings['OPEN_DEVTOOLS_IN_DEBUG'] = False
+    webview.start(debug=True)
 
     stop_event.set() # signal the flask server to shutdown.

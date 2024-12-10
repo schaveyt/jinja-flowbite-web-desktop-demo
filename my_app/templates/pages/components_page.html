@@ -13,6 +13,7 @@
 {% import "jinja_flowbite/controls/select.jinja" as flowbite_select %}
 {% import 'jinja_flowbite/controls/tab_control_anchor.jinja' as flowbite_tab_control_anchor %}
 {% import 'jinja_flowbite/controls/tab_anchor.jinja' as flowbite_tab_anchor %}
+{% import 'jinja_flowbite/controls/toggle_switch.jinja' as flowbite_toggle_switch %}
 
 {% import 'jinja_flowbite/controls/table_static.jinja' as flowbite_table_static %}
 {% import 'jinja_flowbite/controls/table_static_header_cell.jinja' as flowbite_table_static_header_cell %}
@@ -242,6 +243,12 @@
                         {{ flowbite_checkbox.render(checked=True) }} 
                         {{ flowbite_input_label.render(text="Checkbox (checked)") }}
                     </div>
+
+                    <div class="flex flex-col space-y-3">
+                        {{ flowbite_toggle_switch.render(id="unchecked", text="Toggle me") }}
+                        {{ flowbite_toggle_switch.render(id="checked", text="Checked toggle", checked=True) }}
+                        {{ flowbite_toggle_switch.render(id="disabled", text="Disabled toggle", disabled=True) }}
+                    </div>
                     
                     <div>
                         {{ flowbite_input_label.render(text="Input Text", class="mb-2") }}
@@ -266,6 +273,8 @@
                             <option value="4">Option 4</option>
                         {% endcall %} 
                     </div>
+
+                    
                     
                 </div>
                 <div class="flex items-center justify-end">
